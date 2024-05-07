@@ -1,12 +1,6 @@
-export interface Comment {
-  id: number;
-  author: string;
-  content: string;
-  timestamp: Date;
-  replies: Comment[];
-}
+import type { Comment } from './comment';
 
-const comments: Comment[] = [
+export const comments: Comment[] = [
   {
     id: 1,
     author: "Greedy-Implement-995",
@@ -64,30 +58,3 @@ const comments: Comment[] = [
     replies: [],
   },
 ];
-
-export const getComments = (): Comment[] => {
-  return comments;
-};
-
-export const getCommentById = (id: number): Comment | undefined => {
-  return comments.find((comment) => comment.id === id);
-};
-
-export const addComment = (comment: Comment): void => {
-  comment.id = comments.length + 1;
-  comments.push(comment);
-};
-
-export const updateComment = (comment: Comment): void => {
-  const existingComment = comments.find((c) => c.id === comment.id);
-  if (existingComment) {
-    Object.assign(existingComment, comment);
-  }
-};
-
-export const deleteComment = (id: number): void => {
-  const index = comments.findIndex((comment) => comment.id === id);
-  if (index !== -1) {
-    comments.splice(index, 1);
-  }
-};
