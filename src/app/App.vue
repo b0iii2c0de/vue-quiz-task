@@ -1,18 +1,10 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
-import CommentPage from '@/pages/CommentPage.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    CommentPage,
-  },
-});
+<script setup lang="ts">
+  import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="app">
-    <CommentPage />
+  <div id="app">
+    <RouterView />
   </div>
 </template>
 

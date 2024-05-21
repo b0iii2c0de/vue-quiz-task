@@ -11,5 +11,12 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  env: {
+    node: true, 
+  },
+  globals: {
+    require: 'readonly', 
+    module: 'readonly',  
   }
 }
