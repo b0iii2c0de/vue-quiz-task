@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-/*  Внешние модули могут использовать только публичный API, что упрощает поддержку и расширение системы. Импорт только через "точку входа" */
-import type { Comment } from '@/entities/comment/index'; 
-import { addCommentMock } from '@/entities/comment/index'; 
+import type { Comment } from '@/entities/comment'; 
+import { addCommentMock } from '@/entities/comment'; 
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 import { Button } from '@/shared/ui/button';
-
 
 const author = ref('');
 const content = ref('');
@@ -33,9 +31,9 @@ const addComment = () => {
   </div>
 </template>
 
-<style scoped>
-input, textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-</style>
+<!-- <style scoped>
+  input, textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+</style> -->
