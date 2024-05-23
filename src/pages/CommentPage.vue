@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { CommentList } from '@/entities/comment';
-  import { AddComment } from '@/features/commentManagment';
+  import { AddComment } from '@/features/commentManagement';
 </script>
 
 <template>

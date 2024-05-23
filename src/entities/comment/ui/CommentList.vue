@@ -3,6 +3,8 @@
   import type { Comment } from '@/entities/comment/model/comment';
   import { getCommentsMock } from '@/entities/comment/model/commentApi';
   import CommentItem from './CommentItem.vue';
+  import { EditComment, DeleteComment } from '@/features/commentManagement';
+  import { VoteComment } from '@/features/commentVoting';
 
   const comments = ref<Comment[]>([]);
 
@@ -14,6 +16,9 @@
     return comments.map(comment => (
       <li :key="comment.id">
         <CommentItem :comment="comment" />
+        <VoteComment :comment="comment" />
+        <EditComment :comment="comment" />
+        <DeleteComment :comment="comment" />
         <ul v-if="comment.replies.length">
           { renderComments(comment.replies) }
         </ul>

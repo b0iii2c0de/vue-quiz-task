@@ -15,4 +15,4 @@
   <div>
     <Button @click="deleteComment">Delete Comment</Button>
   </div>
-</template>  
+</template>

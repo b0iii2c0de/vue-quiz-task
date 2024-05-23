@@ -1,0 +1,1 @@
+export { default as VoteComment } from './ui/VoteComment.vue';
