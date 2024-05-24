@@ -1,16 +1,19 @@
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, computed } from 'vue';
   import type { Comment } from '@/entities/comment/model/comment';
   import { getCommentsMock } from '@/entities/comment/model/commentApi';
   import CommentItem from './CommentItem.vue';
   import { EditComment, DeleteComment } from '@/features/commentManagement';
   import { VoteComment } from '@/features/commentVoting';
+  import { sortCommentsByRating } from '@/features/commentSorting';
 
   const comments = ref<Comment[]>([]);
 
   onMounted(() => {
     comments.value = getCommentsMock();
   });
+
+  const sortedComments = computed(() => sortCommentsByRating(comments.value));
 
   const renderComments = (comments: Comment[]) => {
     return comments.map(comment => (
