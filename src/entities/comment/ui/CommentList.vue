@@ -14,26 +14,25 @@
   });
 
   const sortedComments = computed(() => sortCommentsByRating(comments.value));
-
-  const renderComments = (comments: Comment[]) => {
-    return comments.map(comment => (
-      <li :key="comment.id">
-        <CommentItem :comment="comment" />
-        <VoteComment :comment="comment" />
-        <EditComment :comment="comment" />
-        <DeleteComment :comment="comment" />
-        <ul v-if="comment.replies.length">
-          { renderComments(comment.replies) }
-        </ul>
-      </li>
-    ));
-  };
 </script>
 
 <template>
   <div>
     <ul>
-      { renderComments(comments.value) }
+        <li v-for="comment in sortedComments" :key="comment.id">
+          <CommentItem :comment="comment" />
+          <VoteComment :comment="comment" />
+          <EditComment :comment="comment" />
+          <DeleteComment :comment="comment" />
+          <ul v-if="comment.replies.length">
+            <li v-for="reply in comment.replies" :key="reply.id">
+              <CommentItem :comment="reply" />
+              <VoteComment :comment="reply" />
+              <EditComment :comment="reply" />
+              <DeleteComment :comment="reply" />
+            </li>
+          </ul>
+        </li>
     </ul>  
   </div>
 </template>
