@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { defineProps } from 'vue';
   import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/shared/ui/card';
   import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/avatar';
   import { Button } from '@/shared/ui/button';
@@ -14,7 +13,7 @@
     <CardHeader>
       <Avatar>
         <AvatarImage :src="props.comment.avatarUrl ?? ''" alt="User avatar"/>
-        <AvatarFallback>{{ props.comment.author.charAt(0) }}</AvatarFallback>
+        <AvatarFallback v-if="!props.comment.avatarUrl">{{ props.comment.author.charAt(0) }}</AvatarFallback>
       </Avatar>
       <CardTitle>{{ props.comment.author }}</CardTitle>  
     </CardHeader>  
