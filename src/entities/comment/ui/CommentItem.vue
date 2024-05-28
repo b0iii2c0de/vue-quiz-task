@@ -13,7 +13,7 @@
   <Card>
     <CardHeader>
       <Avatar>
-        <AvatarImage src="@/app/assets/orca.jpg" alt="User avatar"/>
+        <AvatarImage :src="props.comment.avatarUrl ?? ''" alt="User avatar"/>
         <AvatarFallback>{{ props.comment.author.charAt(0) }}</AvatarFallback>
       </Avatar>
       <CardTitle>{{ props.comment.author }}</CardTitle>  
@@ -22,9 +22,9 @@
       <p>{{ props.comment.content }}</p>
     </CardContent>
     <CardFooter>
-      <Button @click="reply">Reply</Button>
-      <Button @click="edit">Edit</Button>
-      <Button @click="delete">Delete</Button>
+      <Button @click="$emit('reply', props.comment)">Reply</Button>
+      <Button @click="$emit('edit', props.comment)">Edit</Button>
+      <Button @click="$emit('delete', props.comment)">Delete</Button>
     </CardFooter> 
   </Card>      
 </template>
