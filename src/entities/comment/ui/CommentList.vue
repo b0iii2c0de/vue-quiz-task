@@ -5,7 +5,7 @@
   import CommentItem from './CommentItem.vue';
   import { EditComment, DeleteComment } from '@/features/commentManagement';
   import { VoteComment } from '@/features/commentVoting';
-  import { sortCommentsByRating } from '@/features/commentSorting';
+  import { sortCommentsByRating } from '../model/sortComments';
 
   const comments = ref<Comment[]>([]);
 
