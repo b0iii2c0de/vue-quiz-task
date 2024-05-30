@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
-import type { Comment } from '@/entities/comment';
+import type { Comment } from './comment';
 import { 
   getCommentsMock, 
   addCommentMock, 
   updateCommentMock, 
   deleteCommentMock, 
-} from '@/entities/comment/model/commentApi';
+} from './commentApi';
 
 export const useCommentsStore = defineStore('comment', {
   state: () => ({
