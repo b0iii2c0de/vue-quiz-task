@@ -3,6 +3,7 @@
   import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/avatar';
   import { Button } from '@/shared/ui/button';
   import type { Comment } from '@/entities/comment/model/comment';
+  import { formatDate } from '../lib/dateUtils';
   // import { Reply } from 'lucide-vue-next'; // icon to use 
 
   const props = defineProps<{ comment: Comment }>();
@@ -19,6 +20,7 @@
     </CardHeader>  
     <CardContent>
       <p>{{ props.comment.content }}</p>
+      <p>{{ formatDate(props.comment.timestamp) }}</p>
     </CardContent>
     <CardFooter>
       <Button @click="$emit('reply', props.comment)">Reply</Button>
