@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { ref, onMounted, computed } from 'vue';
   import type { Comment } from '@/entities/comment/model/comment';
-  import { getCommentsMock } from '@/entities/comment/model/commentApi';
+  import { getCommentsMock } from '@/entities/comment/api/commentApi';
   import CommentItem from './CommentItem.vue';
   import { EditComment, DeleteComment } from '@/features/commentManagement';
   import { VoteComment } from '@/features/commentVoting';

@@ -1,4 +1,4 @@
-import type { Comment } from '@/entities/comment';
+import type { Comment } from './comment';
 
 // Функция для сортировки комментариев по рейтингу
 export const sortCommentsByRating = (comments: Comment[]): Comment[] => {

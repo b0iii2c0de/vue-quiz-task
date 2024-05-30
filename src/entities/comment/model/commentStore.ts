@@ -5,7 +5,7 @@ import {
   addCommentMock, 
   updateCommentMock, 
   deleteCommentMock, 
-} from './commentApi';
+} from '../api/commentApi';
 
 export const useCommentsStore = defineStore('comment', {
   state: () => ({

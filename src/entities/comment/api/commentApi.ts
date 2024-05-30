@@ -1,4 +1,4 @@
-import type { Comment } from './comment';
+import type { Comment } from '../model/comment';
 import { comments } from './commentMock';
 
 // Функции для работы с мокой комментариев
